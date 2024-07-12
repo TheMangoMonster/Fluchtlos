@@ -30,11 +30,6 @@ def Large_widget(sensor, reihe, saule):
         anzaige = "Sin fugas"
     Label = tk.Label(Frame, text=anzaige, width=46, height=1, bg="#1A1A1A", font=("Helvetica", 30), fg="white").grid(row=0, column=0)
 
-def margins(separation, rand):
-    margin = tk.Frame(root)
-    margin.grid(row = 0)
-    Label = tk.Label(margin, width=separation, bg="black")
-
 # Create the main window
 root = tk.Tk()
 widthRoot = int(root.winfo_screenwidth())
