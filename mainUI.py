@@ -1,6 +1,5 @@
 import tkinter as tk
 import random
-#import tksvg
 
 def update_ui():
     
@@ -15,15 +14,15 @@ def small_Widget(sensor, measure, reihe, saule, Photo):
     Frame.config(bg = "#1A1A1A")
     Image = tk.PhotoImage(file = "Images/" + Photo)
     Label = tk.Label(Frame, text=sensor + measure, width=15, height=1, bg = "#1A1A1A", font=("Helvetica", 20), fg="white").grid(row=0)
-    ImageLabel = tk.Label(Frame, image=Image, width=100, height=100).grid(row=1)
+    ImageLabel = tk.Label(master = Frame, image=Image, width=100, height=100).grid(row=1)
 
 def medium_Widget(sensor, measure, reihe, saule, Photo):
     Frame = tk.Frame(root, pady=10)#, padx=10
     Frame.grid(row = reihe, column = saule)
     Frame.config(bg = "#1A1A1A")
+    mediumImage = tk.PhotoImage(file = "Images/" + Photo)
     Label = tk.Label(Frame, text=sensor + measure, width=23, height=1, bg="#1A1A1A", font=("Helvetica", 20), fg="white").grid(row=0)
-    Image = tk.PhotoImage(file = "Images/" + Photo)
-    ImageLabel = tk.Label(Frame, image=Image, width=100, height=100, bg="blue").grid(row=1)
+    ImageLabel = tk.Label(master = Frame, image = mediumImage, width=100, height=100, bg="blue").grid(row=1)
 
 def Large_widget(sensor, reihe, saule):
     Frame = tk.Frame(root, pady=10)#, padx=10
@@ -35,7 +34,7 @@ def Large_widget(sensor, reihe, saule):
         anzaige = "Sin fugas"
     Label = tk.Label(Frame, text=anzaige, width=46, height=1, bg="#1A1A1A", font=("Helvetica", 30), fg="white").grid(row=0, column=0)
     Image = tk.PhotoImage(file = "Images/virus-covid-solid.png")
-    ImageLabel = tk.Label(Frame, image=Image, width=100, height=100, bg="red").grid(row=1, column=0)
+    ImageLabel = tk.Label(master = Frame, image=Image, width=100, height=100, bg="red").grid(row=1, column=0)
 
 def margins(separation, rand):
     margin = tk.Frame(root)
